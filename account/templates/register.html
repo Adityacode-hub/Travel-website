@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Concert+One&family=Lemon&family=Roboto+Slab:wght@500&family=VT323&display=swap" rel="stylesheet">
+
+    <title>{%block title%}Form{% endblock %}</title>
+    <style>
+       
+        body{
+            height: 100vh;
+            width:100vw;
+            
+        background:url(https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        background-size:cover;
+        background-repeat:no-repeat
+        }
+        .container{
+            height:550px;
+            width:500px; 
+            border-radius: 30px;
+            display: flex;
+            position:relative;
+            align-items: center;
+            margin-top: 5%;
+         background: linear-gradient(455deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);         background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        overflow: hidden;
+         
+        background:rgba(255,255,255,0.1);
+        box-shadow:0 26px 42px rgba(0,0,0,0.1);
+        }
+        form{
+          padding:10px;
+          margin:10px;
+          font-family: 'Carter One', system-ui;
+        
+        }
+        button{
+            margin:30px;
+            float: right;
+           
+        }
+        #box{
+            border-radius: 10px;
+        }
+        #password{
+            border-radius: 10px;
+        }
+        .checkbox{
+            margin:10px;
+        
+        }
+        #id{
+            margin-bottom: 10px;
+        }
+        h1{
+        
+            text-align: center;
+            color:white;
+        }
+        input{
+            border-radius:10px;
+            padding:5px 10px;
+            margin:5px;
+            align-items:center;
+            text-align:center;
+        }
+        a{
+            color:red;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    {% block top%}{% endblock %}
+    
+<div class="container" >
+    
+   <div class="box">
+    <h1>Register details <svg xmlns="http://www.w3.org/2000/svg" width="50" height="5o" fill="currentColor" class="bi bi-truck-front" viewBox="0 0 16 16">
+        <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM4 2a1 1 0 0 0-1 1v3.9c0 .625.562 1.092 1.17.994C5.075 7.747 6.792 7.5 8 7.5s2.925.247 3.83.394A1.008 1.008 0 0 0 13 6.9V3a1 1 0 0 0-1-1zm0 1h8v3.9q0 .002 0 0l-.002.004-.005.002h-.004C11.088 6.761 9.299 6.5 8 6.5s-3.088.26-3.99.406h-.003l-.005-.002L4 6.9q0 .002 0 0z"/>
+        <path d="M1 2.5A2.5 2.5 0 0 1 3.5 0h9A2.5 2.5 0 0 1 15 2.5v9c0 .818-.393 1.544-1 2v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5V14H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2a2.5 2.5 0 0 1-1-2zM3.5 1A1.5 1.5 0 0 0 2 2.5v9A1.5 1.5 0 0 0 3.5 13h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12.5 1z"/>
+      </svg></h1>
+    <form action=" "method="post">
+    {% csrf_token %}
+     <input type="text"     name="first_name" placeholder="first_name"><br>
+     <input type="text"     name="last_name"  placeholder="last_name"><br>
+     <input type="text"     name="username"   placeholder="username"><br>
+     <input type="email"    name="email"      placeholder="email"><br>
+     <input type="password" name="password1"  placeholder="password"><br>
+     <input type="password" name="password2"  placeholder="confirm password"><br>
+     <input type="submit"   class="btn btn-primary"><br>
+     <a href="password"     class="link-warnning">lost password</a>
+     <!-- <label for="username">Username</label>
+<input type="text" name="username"><br>
+
+<label for="name" >Name</label>
+<input type="text" name="name"><br>
+
+<label for="gender">gender</label>
+<input type="radio"name="gender">m<input type="radio" name="gender">f<br>
+
+<label type="password" >password</label>
+<input type="password" name="password"><br>
+<label for="email" >Email</label>
+<input type="text" name="email"><br>
+
+<input id="submit" type="submit" value="Submit">
+<input type="reset" value="Clear"> -->
+</form>
+<strong> already have an account</strong>,<a href="{%url 'login'%}">CLICK HERE</a>
+</div>
+     </div>
+    </form>
+</div>
+</div>
+<!-- <div>
+    { %for message in message %}
+    <h3>{{message}}</h3>
+    { % endfor % }
+
+</div> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+
+</body>
+</html>
